@@ -1,0 +1,24 @@
+random_seed: 2025
+num_classes: 101
+learning_rate: 0.001
+batch_size: 256
+num_epochs: 100
+validation_percent: 0.05
+
+cuda_device: 0   # Use 'cpu' if not available
+
+# Weight init scheme: xavier_uniform, kaiming_normal, kaiming_uniform 
+weight_init:
+  name: xavier_uniform
+
+optimizer: 
+  name: SGD
+  momentum: 0.99
+  weight_decay: 0.0
+
+scheduler:
+  # ReduceLROnPlateau, ExponentialLR, StepLR
+  name: ReduceLROnPlateau
+  factor: 0.1
+  mode: max
+  patience: 5
